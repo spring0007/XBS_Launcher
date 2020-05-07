@@ -1,0 +1,86 @@
+package com.sczn.wearlauncher.socket.command.remind;
+
+import android.content.ContentResolver;
+import android.content.Context;
+import android.provider.Settings;
+
+import com.sczn.wearlauncher.app.LauncherApp;
+import com.sczn.wearlauncher.app.LogUtils;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class IntimateSettingHelper {
+
+    private final String TAG = "IntimateSettingHelper";
+
+    private static IntimateSettingHelper helper;
+
+    /**
+     * @return
+     */
+    public static IntimateSettingHelper getHelper() {
+        if (null == helper) {
+            synchronized (IntimateSettingHelper.class) {
+                if (null == helper) {
+                    helper = new IntimateSettingHelper();
+                }
+            }
+        }
+        return helper;
+    }
+
+
+    public void setInitMateData(JSONObject jsonObject) throws JSONException {
+
+        /*"data":{
+            "bootTime":null,	//开机时间
+                    "isAutoAnswer":false,	//自动接听
+                    "isCallPosition":false,	//通话位置
+                    "isPowerSaving":false,	//省电模式
+                    "isReservePower":true,	//预留电量
+                    "isShieldStrangeCall":false,	//屏蔽陌生呼叫
+                    "shutdownTime":null,	//关机时间
+                    "isNoShutdown":false	//禁止关机
+            "isEnableVolte":false 	//启用volte高清通话
+            "isAutoShutdown":false	//定时关机
+            "isAutoBoot":false	//定时开机
+            "watchId":3
+        },*/
+        JSONObject object = jsonObject.getJSONObject("data");
+        String bootTime = object.getString("bootTime");//开机时间
+        String shutdownTime = object.getString("shutdownTime");//关机时间
+        boolean isAutoShutdown = object.getBoolean("isAutoShutdown");//定时关机
+        boolean isAutoBoot = object.getBoolean("isAutoBoot");//定时开机
+        boolean isEnableVolte = object.getBoolean("isEnableVolte");//启用volte高清通话
+        boolean isNoShutdown = object.getBoolean("isNoShutdown");//禁止关机
+        boolean isShieldStrangeCall = object.getBoolean("isShieldStrangeCall");//屏蔽陌生呼叫
+        boolean isReservePower = object.getBoolean("isReservePower");//预留电量
+        boolean isPowerSaving = object.getBoolean("isPowerSaving");//省电模式
+        boolean isCallPosition = object.getBoolean("isCallPosition");//通话位置
+        boolean isAutoAnswer = object.getBoolean("isPowerSaving");//自动接听
+        ContentResolver contentResolver = LauncherApp.getAppContext().getContentResolver();
+        putSystemString(contentResolver,"default_boot_time",bootTime);
+        putSystemString(contentResolver,"default_shut_down_time",shutdownTime);
+        putSystemBoolean(contentResolver,"default_auto_shut_down",isAutoShutdown);
+        putSystemBoolean(contentResolver,"default_auto_boot",isAutoBoot);
+        putSystemBoolean(contentResolver,"default_enable_volte",isEnableVolte);
+        putSystemBoolean(contentResolver,"default_no_shut_down",isNoShutdown);
+        putSystemBoolean(contentResolver,"default_shield_strange_call",isShieldStrangeCall);
+        putSystemBoolean(contentResolver,"default_reserver_power",isReservePower);
+        putSystemBoolean(contentResolver,"default_power_saving",isPowerSaving);
+        putSystemBoolean(contentResolver,"default_call_position",isCallPosition);
+        putSystemBoolean(contentResolver,"default_auto_answer",isAutoAnswer);
+        LogUtils.i(TAG,"贴心设置解析完成");
+
+    }
+    private static void putSystemString(ContentResolver contentResolver, String name, String value){
+        Settings.System.putString(contentResolver,name,value);
+    }
+
+    private static void putSystemBoolean( ContentResolver contentResolver,String name ,boolean value){
+        Settings.System.putInt(contentResolver,name,value?1:0);
+
+    }
+
+}

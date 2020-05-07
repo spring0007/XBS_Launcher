@@ -1,0 +1,262 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/display1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_30"
+        android:ellipsize="none"
+        android:gravity="center_vertical|end"
+        android:maxLength="12"
+        android:paddingEnd="@dimen/size_14"
+        android:singleLine="true"
+        android:text="0"
+        android:includeFontPadding="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_30" />
+    <TextView
+        android:id="@+id/display2"
+        android:layout_below="@+id/display1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_30"
+        android:ellipsize="none"
+        android:gravity="center_vertical|end"
+        android:maxLength="12"
+        android:paddingEnd="@dimen/size_14"
+        android:singleLine="true"
+        android:text="0"
+        android:includeFontPadding="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_30" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/display2"
+        android:background="@color/calculator_text"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/size_1"
+                android:layout_weight="1"
+               >
+
+                <TextView
+                    android:id="@+id/clear"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/size_1"
+                    android:layout_weight="1"
+                    android:background="@drawable/cal_clear"
+                    />
+
+                <TextView
+                    android:id="@+id/back"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/size_1"
+                    android:layout_weight="1"
+                    android:background="@drawable/cal_delete"
+                    />
+
+                <TextView
+                    android:id="@+id/divide"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/size_1"
+                    android:layout_weight="1"
+                    android:background="@drawable/cal_divide"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/size_1"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/one"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/size_1"
+                    android:layout_weight="1"
+                    android:background="@drawable/cal_1"
+                   />
+
+                <TextView
+                    android:id="@+id/two"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/size_1"
+                    android:layout_weight="1"
+                    android:background="@drawable/cal_2"
+                   />
+
+                <TextView
+                    android:id="@+id/three"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/size_1"
+                    android:layout_weight="1"
+                    android:background="@drawable/cal_3"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/size_1"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/four"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/size_1"
+                    android:layout_weight="1"
+                    android:background="@drawable/cal_4"
+                    />
+
+                <TextView
+                    android:id="@+id/five"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/size_1"
+                    android:layout_weight="1"
+                    android:background="@drawable/cal_5"
+                    />
+
+                <TextView
+                    android:id="@+id/six"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/size_1"
+                    android:layout_weight="1"
+                    android:background="@drawable/cal_6"
+                   />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/size_1"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/seven"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/size_1"
+                    android:layout_weight="1"
+                    android:background="@drawable/cal_7"
+                    />
+
+                <TextView
+                    android:id="@+id/eight"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/size_1"
+                    android:layout_weight="1"
+                    android:background="@drawable/cal_8"
+                   />
+
+                <TextView
+                    android:id="@+id/nine"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/size_1"
+                    android:layout_weight="1"
+                    android:background="@drawable/cal_9"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/dot"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/size_1"
+                    android:layout_weight="1"
+                    android:background="@drawable/cal_decimal"
+                    />
+
+                <TextView
+                    android:id="@+id/zero"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/size_1"
+                    android:layout_weight="1"
+                    android:background="@drawable/cal_0"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!--右侧-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/multiply"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/size_1"
+                android:layout_weight="1"
+                android:background="@drawable/cal_multiply"
+                />
+
+            <TextView
+                android:id="@+id/add"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/size_1"
+                android:layout_weight="1"
+                android:background="@drawable/cal_add"
+                />
+
+            <TextView
+                android:id="@+id/subtract"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/size_1"
+                android:layout_weight="1"
+                android:background="@drawable/cal_subtract"
+                 />
+
+            <TextView
+                android:id="@+id/equal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/cal_equal"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
+

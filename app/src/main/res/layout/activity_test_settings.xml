@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/test_shutdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size_10"
+            android:text="关机通知"
+            android:textSize="@dimen/font_30" />
+        <Button
+            android:id="@+id/test_low_battery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size_10"
+            android:text="低电量通知"
+            android:textSize="@dimen/font_30" />
+        <Button
+            android:id="@+id/test_has_sim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size_10"
+            android:text="SIM卡拔出提醒"
+            android:textSize="@dimen/font_30" />
+        <Button
+            android:id="@+id/test_fence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size_10"
+            android:text="电子围栏"
+            android:textSize="@dimen/font_30" />
+
+        <!--开机时间-->
+        <TextView
+            android:id="@+id/boot_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size_10"
+            android:textSize="@dimen/font_30"/>
+        <Switch
+            android:text="自动开机"
+            android:id="@+id/boot_enable"
+            android:textSize="@dimen/font_30"
+            android:padding="@dimen/size_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <!--关机时间-->
+        <TextView
+            android:id="@+id/shut_down_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size_10"
+            android:textSize="@dimen/font_30"/>
+        <Switch
+            android:text="自动关机"
+            android:id="@+id/shut_down_enable"
+            android:textSize="@dimen/font_30"
+            android:padding="@dimen/size_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Switch
+            android:text="启用volte高清通话"
+            android:id="@+id/volte_enable"
+            android:padding="@dimen/size_10"
+            android:textSize="@dimen/font_30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Switch
+            android:text="禁止关机"
+            android:id="@+id/no_shut_down"
+            android:textSize="@dimen/font_30"
+            android:padding="@dimen/size_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Switch
+            android:text="屏蔽陌生呼叫"
+            android:id="@+id/shield_strange_call_enable"
+            android:textSize="@dimen/font_30"
+            android:padding="@dimen/size_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Switch
+            android:text="预留电量"
+            android:id="@+id/reserver_power_enable"
+            android:textSize="@dimen/font_30"
+            android:padding="@dimen/size_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Switch
+            android:text="省电模式"
+            android:id="@+id/power_saving_enable"
+            android:textSize="@dimen/font_30"
+            android:padding="@dimen/size_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Switch
+            android:text="通话位置"
+            android:id="@+id/call_position_enable"
+            android:textSize="@dimen/font_30"
+            android:padding="@dimen/size_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Switch
+            android:text="自动接听"
+            android:id="@+id/call_answer_enable"
+            android:textSize="@dimen/font_30"
+            android:padding="@dimen/size_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>
